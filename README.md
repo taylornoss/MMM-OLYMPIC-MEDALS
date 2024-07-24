@@ -1,12 +1,65 @@
 # MMM-OLYMPIC-MEDALS
 Olympic Medals Module for MagicMirror<sup>2</sup>
 
-## Example
+## Examples
 
-_screenshots go here_
-<!-- 
-![](.github/regular-season.png) ![](.github/post-season.png) ![](.github/statistic-modal.png) ![](.github/help-modal.png)
--->
+### Olympics with Medals Awarded
+![](images/Full_Table.png) 
+```
+ {
+    module: 'MMM-OLYMPIC-MEDALS',
+        position: 'top_left',
+        config:{
+            season: 'winter',
+            year: 2022,
+            useAbbreviations: false,
+        }
+ }
+```
+<hr />
+
+### Using abbreviation instead of country names
+![](images/Abbreviations.png) 
+```
+ {
+    module: 'MMM-OLYMPIC-MEDALS',
+        position: 'top_left',
+        config:{
+            season: 'winter',
+            year: 2022,
+            useAbbreviations: true,
+        }
+ }
+```
+<hr />
+
+### Invalid configuration
+![](images/Invalid_Config.png) 
+```
+ {
+    module: 'MMM-OLYMPIC-MEDALS',
+        position: 'top_left',
+        config:{
+            season: 'winter',
+            year: 2024,
+        }
+ }
+```
+<hr />
+
+### No Medals awarded yet
+![](images/No_Medals.png)
+```
+ {
+    module: 'MMM-OLYMPIC-MEDALS',
+        position: 'top_left',
+        config:{
+            season: 'summer',
+            year: 2024,
+        }
+ }
+```
+
 ## Dependencies
 
 * An installation of [MagicMirror<sup>2</sup>](https://github.com/MagicMirrorOrg/MagicMirror)
@@ -34,7 +87,7 @@ _screenshots go here_
 
 | **Option** | **Default** | **Description** |
 | --- | --- | --- |
-| `season` | `summer` | `'summer'` or `'winter'` |
+| `season` | `'summer'` | `'summer'` or `'winter'` |
 | `year` | `2024` | Year to get medais for. Invalid year will throw an error on start. |
 | `reloadInterval` | `3600000` (1 hour) | How often should the data be fetched. |
 | `tableSize` | `'xsmall'` | Font size of table. Possible values: `'xsmall'`, `'small'`, `'medium'`, `'large'` and `'xlarge'` |
