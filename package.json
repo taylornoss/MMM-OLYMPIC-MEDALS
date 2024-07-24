@@ -1,0 +1,23 @@
+{
+  "name": "mmm-olympic-medals",
+  "version": "1.0.0",
+  "description": "Medal Count for Olympics for MagicMirror2",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/taylornoss/MMM-OLYMPIC-MEDALS.git"
+  },
+  "keywords": [
+    "MagicMirror",
+    "Olympic",
+    "Medal"
+  ],
+  "author": "taylornoss",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/taylornoss/MMM-OLYMPIC-MEDALS/issues"
+  },
+  "homepage": "https://github.com/taylornoss/MMM-OLYMPIC-MEDALS#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2"
+  }
+}

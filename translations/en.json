@@ -1,0 +1,11 @@
+{
+  "LOADING": "Loading...",
+  "COUNTRY": "Country",
+  "GOLD": "Gold",
+  "SILVER": "Silver",
+  "BRONZE": "Bronze",
+  "TOTAL": "Total",
+  "NO_MEDALS": "No Medals Awarded Yet",
+  "MEDALS_HEADER": "Total Medals By Country",
+  "CONFIG_ERROR": "There is an error in the configuration. Please check the console for errors."
+}

@@ -1,0 +1,45 @@
+<header>
+   <img width='50' src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Olympic_rings_without_rims.svg/684px-Olympic_rings_without_rims.svg.png" class="logo"/><span>{{config.year}} {{config.season}} Olympics</span>
+</header>
+{% if configError %}
+    <div class="dimmed light">{{ "CONFIG_ERROR" | translate }}</div>
+{% elif not loaded %}
+    <div class="dimmed light">{{ "LOADING" | translate }}</div>
+{% else %}
+    {% if noData %}
+        <h5>{{"NO_MEDALS" | translate }}</h5>
+    {% else %}
+    <h5>{{ "MEDALS_HEADER" | translate }}</h5>
+    <table class="MMM-OLYMPIC-MEDALS statistics table {{config.tableSize}}">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th colspan="2">{{"COUNTRY" | translate }}</th>
+                <th>{{"GOLD" | translate }}</th>
+                <th>{{ "SILVER" | translate }}</th>
+                <th>{{ "BRONZE" | translate }}</th>
+                <th>{{ "TOTAL" | translate }}</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in rows %}
+                <tr class="centered-row">
+                    <td>{{ loop.index }}</td>
+                    <td><img src="{{ row.img }}" class="logo"/></td>
+                    {% if config.useAbbreviations %}
+                        <td class="align-left">{{ row.abbreviation }}</td>
+                    {% else %}
+                        <td class="align-left">{{ row.country }}</td>
+                    {% endif %}
+                    <td class="align-middle">{{ row.gold }}</td>
+                    <td class="align-middle">{{ row.silver }}</td>
+                    <td class="align-middle">{{ row.bronze }}</td>
+                    <td class="align-middle">{{ row.total }}</td>
+                </tr>
+            {% else %}
+                <tr><td>No medals awarded yet</td></tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% endif %}
+{% endif %}
